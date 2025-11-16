@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AKBAR AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes glow-in {
+        0% {
+          box-shadow: 0 0 0px rgba(192, 132, 252, 0);
+          transform: scale(0.98);
+        }
+        50% {
+          box-shadow: 0 0 20px 5px rgba(192, 132, 252, 0.4);
+           transform: scale(1.02);
+        }
+        100% {
+          box-shadow: 0 0 0px rgba(192, 132, 252, 0);
+           transform: scale(1);
+        }
+      }
+      .animate-glow-in {
+        animation: glow-in 0.8s ease-out;
+      }
+       @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.5s ease-out forwards;
+      }
+       @keyframes fade-in-fast {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      .animate-fade-in-fast {
+        animation: fade-in-fast 0.15s ease-out forwards;
+      }
+      @keyframes fade-in-slide-up {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in-slide-up {
+        animation: fade-in-slide-up 0.3s ease-out forwards;
+      }
+      @keyframes pulse-border {
+        0%, 100% {
+          box-shadow: 0 0 0 0px rgba(168, 85, 247, 0.7);
+        }
+        50% {
+          box-shadow: 0 0 0 4px rgba(168, 85, 247, 0);
+        }
+      }
+      .animate-pulse-border {
+        animation: pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        border-color: #a855f7; /* purple-500 */
+      }
+      @keyframes background-pan {
+        0% { background-position: 0% center; }
+        50% { background-position: 100% center; }
+        100% { background-position: 0% center; }
+      }
+      .animate-background-pan {
+        background-size: 200% auto;
+        animation: background-pan 10s linear infinite;
+      }
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #a855f7; } /* purple-500 */
+      }
+      .typing-cursor::after {
+        content: '_';
+        font-weight: bold;
+        animation: blink-caret 1.2s step-end infinite;
+        margin-left: 0.25rem;
+      }
+      /* Custom scrollbar for style selector */
+      .overflow-x-auto::-webkit-scrollbar {
+        height: 4px;
+      }
+      .overflow-x-auto::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .overflow-x-auto::-webkit-scrollbar-thumb {
+        background-color: #4a5568; /* gray-700 */
+        border-radius: 20px;
+      }
+      .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+        background-color: #718096; /* gray-500 */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "clsx": "https://aistudiocdn.com/clsx@^2.1.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
